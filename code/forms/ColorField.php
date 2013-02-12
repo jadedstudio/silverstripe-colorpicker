@@ -5,7 +5,7 @@
 class ColorField extends TextField {
 	
 	public function __construct($name, $title = null, $value = '', $form = null){
-		parent::__construct($name, $title, $value, 6, $form);
+		parent::__construct($name, $title, $value, $form);
 	}
 	
 	function Field() {
@@ -20,9 +20,9 @@ class ColorField extends TextField {
 			'type' => 'text',
 			'class' => 'text' . ($this->extraClass() ? $this->extraClass() : ''),
 			'id' => $this->id(),
-			'name' => $this->Name(),
+			'name' => $this->getName(),
 			'value' => $this->Value(),
-			'tabindex' => $this->getTabIndex(),
+			'tabindex' => $this->getAttribute("tabindex"),
 			'maxlength' => ($this->maxLength) ? $this->maxLength : null,
 			'size' => ($this->maxLength) ? min( $this->maxLength, 30 ) : null,
 			'style' => $style
